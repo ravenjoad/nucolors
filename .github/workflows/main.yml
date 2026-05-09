@@ -1,0 +1,30 @@
+name: Build & Release Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Compile LaTeX package
+        uses: xu-cheng/texlive-action@v3
+        with:
+          run: |
+            make
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v3
+        with:
+          # Specify the files you want to include in the release
+          files: |
+            *.sty
+            *.pdf
+          body: "Automated release of version ${{ github.ref_name }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
