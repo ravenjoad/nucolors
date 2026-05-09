@@ -1,0 +1,13 @@
+% CONTENTS OF THE NUCOLORS BUNDLE
+% ===============================
+
+nucolors.dtx
+        Main package.
+nucolors.pdf
+        Source code documentation.
+
+% Derived files
+% =============
+
+nucolors.stq
+        LaTeX package files.
