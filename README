@@ -1,0 +1,15 @@
+|
+---------:| ---------------------------------------------------------------
+ nucolors:| Northwestern University Colors
+   Author:| Raven Hallsby
+   E-mail:| raven@hallsby.com
+  License:| Released under the LaTeX Project Public License v1.3c or later
+      See:| http://www.latex-project.org/lppl.txt
+
+Short description:
+Some text about the package: probably the same as the abstract.
+
+To build the `sty` file for use, use the command `make`, and copy
+the resulting `nucolors.sty` to your project.
+
+
