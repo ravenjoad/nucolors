@@ -1,0 +1,331 @@
+% \iffalse meta-comment
+%
+% Copyright (C) 2023 by <Raven Hallsby> <<kgh@u.northwestern.edu>>
+% ---------------------------------------------------------------------------
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is <Raven Hallsby>.
+%
+% This work consists of the files nucolors.dtx and nucolors.ins
+% and the derived filebase nucolors.sty.
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{nucolors.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<package>\ProvidesPackage{nucolors}[2023/07/24 Northwestern University Colors]
+%<*package>
+    [2023/07/24 v0.1 Northwestern University Colors]
+%</package>
+%
+%<*driver>
+\documentclass{ltxdoc}
+\PassOptionsToPackage{a4paper,margin=25mm,left=50mm,nohead}{geometry}
+\PassOptionsToPackage{%
+  hyperindex=false,bookmarks,bookmarksopen,bookmarksopenlevel=1,
+  pdftitle={NUColors},
+  pdfauthor={Raven Hallsby},
+}{hyperref}
+\usepackage{nucolors}[2023/07/24]
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{nucolors.dtx}
+  \PrintChanges
+  \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{99}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+% \changes{<+version+>}{<+date+>}{Converted to DTX file}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+% \providecommand*{\url}{\texttt}
+% \GetFileInfo{nucolors.dtx}
+% \title{\textsf{nucolors} --- Northwestern University Colors}
+% \author{Raven Hallsby \\ \url{kgh@u.northwestern.edu}}
+% \date{\fileversion~Released \filedate}
+%
+% \maketitle
+%
+% \section{Introduction}
+%
+% The color palette described by Northwestern University's marketing team is given by this package.
+% The palette can be found on their webpage, \url{https://www.northwestern.edu/brand/visual-identity/color-palettes/}.
+%
+% \section{Usage}
+%
+% All the colors that have color-code specifications are defined.
+% There are RGB definitions for digital media and CMYK for high-quality print media.
+% If you use print media, you may choose if the paper is coated or not.
+% All available options are documented in Table~\ref{tab:nucolors-options}.
+
+% \begin{table}[h!tbp]
+%   \centering
+%   \begin{tabular}{lcp{6cm}}
+%       Option & Default & Meaning \\
+%       \texttt{digital} & \texttt{true} & Use RGB color for output. \\
+%       \texttt{print}\footnotemark{} & \texttt{false} & Use CMYK for print output. \\
+%       \texttt{coating}\footnotemark{} & \texttt{false} & Change CMYK for print output for coated paper. \\
+%     \end{tabular}
+%   \caption{Package Options}
+%   \label{tab:nucolors-options}
+% \end{table}
+% \footnotetext{\texttt{print} and \texttt{digital} are mutually exclusive and complementary.}
+% \footnotetext{Only applies when \texttt{print} is \texttt{true}.}
+
+% \subsection{Available Colors}
+% \texttt{nu160} to \texttt{nu10} are available shades and tints of Northwestern Purple.
+% Northwestern Purple is \texttt{nu100} or \texttt{NorthwesternPurple}\index{colors|defaults}.
+
+% There are also a handful of blacks and grays defined using \texttt{nublack100} to \texttt{nublack10}.
+% The default Northwestern black is \texttt{nublack100}, which is aliased to \texttt{NorthwesternBlack}.
+
+% \begin{quote}
+%   Note that all colors have been generated using the RGB color scheme for this document.
+%   The colors on the PDF and your screen may not reflect the real color shown.
+%   If you intend to use your document for high-quality \textbf{printing}, please use the \texttt{print} option at print-time.
+% \end{quote}
+
+% \begin{testcolors}[rgb,cmyk,HTML]
+%  \testcolor{NorthwesternPurple}
+%  \testcolor{nu100}
+%\end{testcolors}
+
+% \subsubsection{Tints (Lighter)}
+% Tints are lighter in color than Northwestern Purple (nu100).
+
+% \begin{testcolors}[rgb,cmyk,HTML]
+%   \testcolor{nu90}
+%   \testcolor{nu80}
+%   \testcolor{nu70}
+%   \testcolor{nu60}
+%   \testcolor{nu50}
+%   \testcolor{nu40}
+%   \testcolor{nu30}
+%   \testcolor{nu20}
+%   \testcolor{nu10}
+% \end{testcolors}
+
+% \subsubsection{Shades (Darker)}
+% Shades are darker in color than Northwestern Purple (nu100).
+
+% \begin{testcolors}[rgb,cmyk,HTML]
+%   \testcolor{nu160}
+%   \testcolor{nu150}
+%   \testcolor{nu140}
+%   \testcolor{nu130}
+%   \testcolor{nu120}
+%   \testcolor{nu110}
+% \end{testcolors}
+
+% \section{Blacks \& Grays}
+% Note that not all black/grays are defined.
+% Northwestern has not provided color values for some of them, so they are left white in this package.
+
+% \begin{testcolors}[rgb,cmyk,HTML]
+%   \testcolor{nublack}
+%   \testcolor{nublack90}
+%   \testcolor{nublack80}
+%   \testcolor{nublack70}
+%   \testcolor{nublack60}
+%   \testcolor{nublack50}
+%   \testcolor{nublack40}
+%   \testcolor{nublack30}
+%   \testcolor{nublack20}
+%   \testcolor{nublack10}
+% \end{testcolors}
+
+%
+% \StopEventually{}
+%
+% \section{Implementation}
+%
+% \iffalse
+%<*package>
+% \fi
+%
+%    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{nucolors}[2023/07/24 Northwestern University Colors]
+\PackageInfo{nucolors}{Color information taken from https://www.northwestern.edu/brand/visual-identity/color-palettes/}
+\RequirePackage{kvoptions}
+%    \end{macrocode}
+%    \begin{macrocode}
+\RequirePackage[table,x11names]{xcolor}
+\SetupKeyvalOptions{
+  family=nucolors,
+  prefix=nucolors@
+}
+%    \end{macrocode}
+% Change styles depending on the type of output
+%    \begin{macrocode}
+\DeclareBoolOption[true]{digital}
+%    \end{macrocode}
+% Default \texttt{digital} to true. You only switch to printing at the end
+%    \begin{macrocode}
+\DeclareComplementaryOption{print}{digital}
+\DeclareBoolOption{coated}% If print, coated or uncoated?
+%    \end{macrocode}
+% Default to false on \texttt{coated}, because coated paper is less frequently used.
+%
+%    \begin{macrocode}
+\DeclareOption*{%
+  \PackageWarning{nucolors}{Unknown option(s) '\CurrentOption'}%
+}
+\ProcessKeyvalOptions*
+%    \end{macrocode}
+% \subsection{Digital Media}
+%    \begin{macrocode}
+\ifnucolors@digital
+%    \end{macrocode}
+% Purple, shades and tints for digital media (RGB)
+%    \begin{macrocode}
+  \definecolor{nu160}{RGB}{029,002,053}
+  \definecolor{nu150}{RGB}{038,008,065}
+  \definecolor{nu140}{RGB}{048,016,078}
+  \definecolor{nu130}{RGB}{056,023,090}
+  \definecolor{nu120}{RGB}{064,031,104}
+  \definecolor{nu110}{RGB}{072,036,118}
+  \definecolor{nu100}{RGB}{078,042,132} % The "Northwestern Purple"
+  \definecolor{nu90} {RGB}{091,059,140}
+  \definecolor{nu80} {RGB}{104,076,150}
+  \definecolor{nu70} {RGB}{118,093,160}
+  \definecolor{nu60} {RGB}{131,110,170}
+  \definecolor{nu50} {RGB}{147,128,182}
+  \definecolor{nu40} {RGB}{164,149,195}
+  \definecolor{nu30} {RGB}{182,172,209}
+  \definecolor{nu20} {RGB}{204,196,223}
+  \definecolor{nu10} {RGB}{228,224,238}
+%    \end{macrocode}
+% Blacks and grays for digital media
+%    \begin{macrocode}
+  \definecolor{nublack100}{RGB}{000,000,000}
+  \definecolor{nublack90}{RGB}{255,255,255}
+  \definecolor{nublack80}{HTML}{342f2e}
+  \definecolor{nublack70}{RGB}{255,255,255}
+  \definecolor{nublack60}{RGB}{255,255,255}
+  \definecolor{nublack50}{HTML}{716c6b}
+  \definecolor{nublack40}{RGB}{255,255,255}
+  \definecolor{nublack30}{RGB}{255,255,255}
+  \definecolor{nublack20}{HTML}{bbb8b8}
+  \definecolor{nublack10}{HTML}{d8d6d6}
+\else% Print output
+%    \end{macrocode}
+% \subsection{Print Media}
+% \subsubsection{Coated Print}
+%    \begin{macrocode}
+  \ifnucolors@coated
+%    \end{macrocode}
+% Purple, shades and tints for \textbf{coated} print media, using CMYK
+%    \begin{macrocode}
+    \definecolor{nu160}{cmyk}{0.88,1.00,0.30,0.62}
+    \definecolor{nu150}{cmyk}{0.87,1.00,0.25,0.54}
+    \definecolor{nu140}{cmyk}{0.87,1.00,0.20,0.46}
+    \definecolor{nu130}{cmyk}{0.85,1.00,0.15,0.28}
+    \definecolor{nu120}{cmyk}{0.85,1.00,0.10,0.30}
+    \definecolor{nu110}{cmyk}{0.85,1.00,0.05,0.22}
+    \definecolor{nu100}{cmyk}{0.85,1.00,0,0.15} % The "Northwestern Purple"
+    \definecolor{nu90} {cmyk}{0.79,0.86,0,0.11}
+    \definecolor{nu80} {cmyk}{0.68,0.7,0,0.10}
+    \definecolor{nu70} {cmyk}{0.58,0.62,0,0.07}
+    \definecolor{nu60} {cmyk}{0.47,0.50,0,0.06}
+    \definecolor{nu50} {cmyk}{0.38,0.40,0,0.05}
+    \definecolor{nu40} {cmyk}{0.33,0.34,0,0.02}
+    \definecolor{nu30} {cmyk}{0.26,0.26,0,0}
+    \definecolor{nu20} {cmyk}{0.18,0.18,0,0}
+    \definecolor{nu10} {cmyk}{0.09,0.09,0,0}
+%    \end{macrocode}
+% Blacks and grays for \textbf{coated} print media
+%    \begin{macrocode}
+    \definecolor{nublack100}{cmyk}{0.50,0.50,0.50,1.00}
+    \definecolor{nublack90}{cmyk}{0,0,0,0}
+    \definecolor{nublack80}{HTML}{342f2e}
+    \definecolor{nublack70}{cmyk}{0,0,0,0}
+    \definecolor{nublack60}{cmyk}{0,0,0,0}
+    \definecolor{nublack50}{HTML}{716c6b}
+    \definecolor{nublack40}{cmyk}{0,0,0,0}
+    \definecolor{nublack30}{cmyk}{0,0,0,0}
+    \definecolor{nublack20}{HTML}{bbb8b8}
+    \definecolor{nublack10}{HTML}{d8d6d6}
+  \else% Uncoated print output
+%    \end{macrocode}
+% \subsubsection{Uncoated Print}
+% Purple, shades and tints for \textbf{uncoated} print media, using CMYK
+%    \begin{macrocode}
+    \definecolor{nu160}{cmyk}{0.84,1.00,0.30,0.60}
+    \definecolor{nu150}{cmyk}{0.84,1.00,0.25,0.50}
+    \definecolor{nu140}{cmyk}{0.87,0.90,0.20,0.48}
+    \definecolor{nu130}{cmyk}{0.87,0.90,0.15,0.39}
+    \definecolor{nu120}{cmyk}{0.87,0.90,0.10,0.30}
+    \definecolor{nu110}{cmyk}{0.87,0.90,0.05,0.21}
+    \definecolor{nu100}{cmyk}{0.87,0.90,0,0.12} % The "Northwestern Purple"
+    \definecolor{nu90} {cmyk}{0.79,0.88,0,0}
+    \definecolor{nu80} {cmyk}{0.71,0.75,0,0}
+    \definecolor{nu70} {cmyk}{0.61,0.67,0,0}
+    \definecolor{nu60} {cmyk}{0.54,0.54,0,0.70}
+    \definecolor{nu50} {cmyk}{0.45,0.47,0,0}
+    \definecolor{nu40} {cmyk}{0.36,0.36,0,0.05}
+    \definecolor{nu30} {cmyk}{0.26,0.26,0,0.04}
+    \definecolor{nu20} {cmyk}{0.17,0.17,0,0.02}
+    \definecolor{nu10} {cmyk}{0.10,0.08,0,0.02}
+%    \end{macrocode}
+% Blacks and grays for \textbf{uncoated} print media
+%    \begin{macrocode}
+    \definecolor{nublack100}{cmyk}{0.50,0.50,0.50,1.00}
+    \definecolor{nublack90}{cmyk}{0,0,0,0}
+    \definecolor{nublack80}{HTML}{342f2e}
+    \definecolor{nublack70}{cmyk}{0,0,0,0}
+    \definecolor{nublack60}{cmyk}{0,0,0,0}
+    \definecolor{nublack50}{HTML}{716c6b}
+    \definecolor{nublack40}{cmyk}{0,0,0,0}
+    \definecolor{nublack30}{cmyk}{0,0,0,0}
+    \definecolor{nublack20}{HTML}{bbb8b8}
+    \definecolor{nublack10}{HTML}{d8d6d6}
+  \fi
+\fi
+%    \end{macrocode}
+% \subsection{Color Aliases}
+%    \begin{macrocode}
+\colorlet{NorthwesternBlack}{nublack100}
+\colorlet{NorthwesternPurple}{nu100}%    \end{macrocode}
+
+%
+% \iffalse
+%</package>
+% \fi
+%
+% \Finale
+\endinput
