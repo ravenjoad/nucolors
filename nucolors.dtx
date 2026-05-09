@@ -1,22 +1,87 @@
 % \iffalse meta-comment
-%
-% Copyright (C) 2023 by <Raven Hallsby> <<kgh@u.northwestern.edu>>
-% ---------------------------------------------------------------------------
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-%
-% This work has the LPPL maintenance status `maintained'.
-%
-% The Current Maintainer of this work is <Raven Hallsby>.
-%
-% This work consists of the files nucolors.dtx and nucolors.ins
-% and the derived filebase nucolors.sty.
-%
+% vim: textwidth=75
+%<*internal>
+\iffalse
+%</internal>
+%<*readme>
+|
+---------:| ---------------------------------------------------------------
+ nucolors:| Northwestern University Colors
+   Author:| Raven Hallsby
+   E-mail:| raven@hallsby.com
+  License:| Released under the LaTeX Project Public License v1.3c or later
+      See:| http://www.latex-project.org/lppl.txt
+
+Short description:
+Some text about the package: probably the same as the abstract.
+
+To build the `sty` file for use, use the command `make`, and copy
+the resulting `nucolors.sty` to your project.
+%</readme>
+
+%<*internal>
+\fi
+\def\nameofplainTeX{plain}
+\ifx\fmtname\nameofplainTeX\else
+  \expandafter\begingroup
+\fi
+%</internal>
+%<*install>
+\input docstrip.tex
+\keepsilent
+\askforoverwritefalse
+\preamble
+---------:| ---------------------------------------------------------------
+ nucolors:| Northwestern University Colors
+   Author:| Raven Hallsby
+   E-mail:| kgh@u.northwestern.edu
+  License:| Released under the LaTeX Project Public License v1.3c or later
+      See:| http://www.latex-project.org/lppl.txt
+
+\endpreamble
+\postamble
+
+Copyright (C) 2025 by Raven Hallsby <kgh@u.northwestern.edu>
+
+This work may be distributed and/or modified under the
+conditions of the LaTeX Project Public License (LPPL), either
+version 1.3c of this license or (at your option) any later
+version.  The latest version of this license is in the file:
+
+http://www.latex-project.org/lppl.txt
+
+This work is "maintained" (as per LPPL maintenance status) by
+Raven Hallsby.
+
+This work consists of the file rq.dtx and a Makefile.
+Running "make" generates the derived files README, rq.pdf and rq.sty.
+Running "make inst" installs the files in the user's TeX tree.
+Running "make install" installs the files in the local TeX tree.
+
+\endpostamble
+
+\usedir{tex/latex/nucolors}
+\generate{
+  \file{\jobname.sty}{\from{\jobname.dtx}{package}}
+}
+%</install>
+%<install>\endbatchfile
+%<*internal>
+\usedir{source/latex/rq}
+\generate{
+  \file{\jobname.ins}{\from{\jobname.dtx}{install}}
+}
+\nopreamble\nopostamble
+\usedir{doc/latex/rq}
+\generate{
+  \file{README.txt}{\from{\jobname.dtx}{readme}}
+}
+\ifx\fmtname\nameofplainTeX
+  \expandafter\endbatchfile
+\else
+  \expandafter\endgroup
+\fi
+%</internal>
 % \fi
 %
 % \iffalse
@@ -24,7 +89,7 @@
 \ProvidesFile{nucolors.dtx}
 %</driver>
 %<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
-%<package>\ProvidesPackage{nucolors}[2023/07/24 Northwestern University Colors]
+%<package>\ProvidesPackage{nucolors}
 %<*package>
     [2023/07/24 v0.1 Northwestern University Colors]
 %</package>
@@ -37,48 +102,42 @@
   pdftitle={NUColors},
   pdfauthor={Raven Hallsby},
 }{hyperref}
-\usepackage{nucolors}[2023/07/24]
+\usepackage[]{nucolors}[2023/07/24]
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
 \begin{document}
-  \DocInput{nucolors.dtx}
+  \DocInput{\jobname.dtx}
   \PrintChanges
   \PrintIndex
 \end{document}
 %</driver>
 % \fi
 %
-% \CheckSum{99}
-%
-% \CharacterTable
-%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
-%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
-%   Digits        \0\1\2\3\4\5\6\7\8\9
-%   Exclamation   \!     Double quote  \"     Hash (number) \#
-%   Dollar        \$     Percent       \%     Ampersand     \&
-%   Acute accent  \'     Left paren    \(     Right paren   \)
-%   Asterisk      \*     Plus          \+     Comma         \,
-%   Minus         \-     Point         \.     Solidus       \/
-%   Colon         \:     Semicolon     \;     Less than     \<
-%   Equals        \=     Greater than  \>     Question mark \?
-%   Commercial at \@     Left bracket  \[     Backslash     \\
-%   Right bracket \]     Circumflex    \^     Underscore    \_
-%   Grave accent  \`     Left brace    \{     Vertical bar  \|
-%   Right brace   \}     Tilde         \~}
-%
-%
-% \changes{<+version+>}{<+date+>}{Converted to DTX file}
-%
+% \GetFileInfo{\jobname.dtx}
 % \DoNotIndex{\newcommand,\newenvironment}
+% \DoNotIndex{\DeclareBoolOption,\DeclareComplementaryOption,\ProcessKeyvalOptions*}
+% \DoNotIndex{\ProcessKeyvalOptions}
+% \DoNotIndex{\else,\endinput,\fi,\PackageInfo,\RequirePackage,\SetupKeyvalOptions}
+% \DoNotIndex{\definecolor,\colorlet}
 %
-% \providecommand*{\url}{\texttt}
-% \GetFileInfo{nucolors.dtx}
 % \title{\textsf{nucolors} --- Northwestern University Colors}
-% \author{Raven Hallsby \\ \url{kgh@u.northwestern.edu}}
+% \author{Raven Hallsby\thanks{E-mail: kgh@u.northwestern.edu}}
 % \date{\fileversion~Released \filedate}
 %
-% \maketitle
+%\maketitle
+%
+%\changes{v0.0.1}{2026/05/09}{First public release}
+%
+% \begin{abstract}
+%   A tiny \LaTeX{} package defining and providing Northwestern
+%   University's approved branding colors.
+% \end{abstract}
+%
+%\StopEventually{^^A
+%  \PrintChanges
+%  \PrintIndex
+%}
 %
 % \section{Introduction}
 %
@@ -94,7 +153,7 @@
 
 % \begin{table}[h!tbp]
 %   \centering
-%   \begin{tabular}{lcp{6cm}}
+%   \begin{tabular}{lcl}
 %       Option & Default & Meaning \\
 %       \texttt{digital} & \texttt{true} & Use RGB color for output. \\
 %       \texttt{print}\footnotemark{} & \texttt{false} & Use CMYK for print output. \\
@@ -105,25 +164,25 @@
 % \end{table}
 % \footnotetext{\texttt{print} and \texttt{digital} are mutually exclusive and complementary.}
 % \footnotetext{Only applies when \texttt{print} is \texttt{true}.}
-
+%
 % \subsection{Available Colors}
 % \texttt{nu160} to \texttt{nu10} are available shades and tints of Northwestern Purple.
-% Northwestern Purple is \texttt{nu100} or \texttt{NorthwesternPurple}\index{colors|defaults}.
-
+% Northwestern Purple is \texttt{nu100} or \texttt{NorthwesternPurple}.
+%
 % There are also a handful of blacks and grays defined using \texttt{nublack100} to \texttt{nublack10}.
 % The default Northwestern black is \texttt{nublack100}, which is aliased to \texttt{NorthwesternBlack}.
-
+%
 % \begin{quote}
-%   Note that all colors have been generated using the RGB color scheme for this document.
-%   The colors on the PDF and your screen may not reflect the real color shown.
-%   If you intend to use your document for high-quality \textbf{printing}, please use the \texttt{print} option at print-time.
+%   Note that all colors in this PDF have been generated using the RGB color scheme.
+%   The colors in the PDF and your screen may not reflect the real color shown.
+%   If you intend to use your document for high-quality printing, please use the \texttt{print} option at print-time.
 % \end{quote}
-
+%
 % \begin{testcolors}[rgb,cmyk,HTML]
 %  \testcolor{NorthwesternPurple}
 %  \testcolor{nu100}
-%\end{testcolors}
-
+% \end{testcolors}
+%
 % \subsubsection{Tints (Lighter)}
 % Tints are lighter in color than Northwestern Purple (nu100).
 
@@ -150,13 +209,13 @@
 %   \testcolor{nu120}
 %   \testcolor{nu110}
 % \end{testcolors}
-
+%
 % \section{Blacks \& Grays}
 % Note that not all black/grays are defined.
 % Northwestern has not provided color values for some of them, so they are left white in this package.
-
+%
 % \begin{testcolors}[rgb,cmyk,HTML]
-%   \testcolor{nublack}
+%   \testcolor{nublack100}
 %   \testcolor{nublack90}
 %   \testcolor{nublack80}
 %   \testcolor{nublack70}
@@ -167,7 +226,6 @@
 %   \testcolor{nublack20}
 %   \testcolor{nublack10}
 % \end{testcolors}
-
 %
 % \StopEventually{}
 %
@@ -178,9 +236,8 @@
 % \fi
 %
 %    \begin{macrocode}
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{nucolors}[2023/07/24 Northwestern University Colors]
-\PackageInfo{nucolors}{Color information taken from https://www.northwestern.edu/brand/visual-identity/color-palettes/}
+\PackageInfo{nucolors}{Color information taken from
+  https://www.northwestern.edu/brand/visual-identity/color-palettes/}
 \RequirePackage{kvoptions}
 %    \end{macrocode}
 %    \begin{macrocode}
@@ -190,21 +247,21 @@
   prefix=nucolors@
 }
 %    \end{macrocode}
+%
 % Change styles depending on the type of output
 %    \begin{macrocode}
 \DeclareBoolOption[true]{digital}
 %    \end{macrocode}
+%
 % Default \texttt{digital} to true. You only switch to printing at the end
 %    \begin{macrocode}
 \DeclareComplementaryOption{print}{digital}
 \DeclareBoolOption{coated}% If print, coated or uncoated?
 %    \end{macrocode}
-% Default to false on \texttt{coated}, because coated paper is less frequently used.
+% Default to false on \texttt{coated}, because coated paper is less
+% frequently used.
 %
 %    \begin{macrocode}
-\DeclareOption*{%
-  \PackageWarning{nucolors}{Unknown option(s) '\CurrentOption'}%
-}
 \ProcessKeyvalOptions*
 %    \end{macrocode}
 % \subsection{Digital Media}
@@ -230,6 +287,7 @@
   \definecolor{nu20} {RGB}{204,196,223}
   \definecolor{nu10} {RGB}{228,224,238}
 %    \end{macrocode}
+%
 % Blacks and grays for digital media
 %    \begin{macrocode}
   \definecolor{nublack100}{RGB}{000,000,000}
@@ -244,6 +302,7 @@
   \definecolor{nublack10}{HTML}{d8d6d6}
 \else% Print output
 %    \end{macrocode}
+%
 % \subsection{Print Media}
 % \subsubsection{Coated Print}
 %    \begin{macrocode}
@@ -282,6 +341,7 @@
     \definecolor{nublack10}{HTML}{d8d6d6}
   \else% Uncoated print output
 %    \end{macrocode}
+%
 % \subsubsection{Uncoated Print}
 % Purple, shades and tints for \textbf{uncoated} print media, using CMYK
 %    \begin{macrocode}
@@ -317,15 +377,15 @@
   \fi
 \fi
 %    \end{macrocode}
+%
 % \subsection{Color Aliases}
 %    \begin{macrocode}
 \colorlet{NorthwesternBlack}{nublack100}
-\colorlet{NorthwesternPurple}{nu100}%    \end{macrocode}
-
+\colorlet{NorthwesternPurple}{nu100}
+%    \end{macrocode}
 %
-% \iffalse
-%</package>
-% \fi
-%
-% \Finale
+%    \begin{macrocode}
 \endinput
+%</package>
+%    \end{macrocode}
+%\Finale
