@@ -91,7 +91,7 @@ Running "make install" installs the files in the local TeX tree.
 %<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
 %<package>\ProvidesPackage{nucolors}
 %<*package>
-    [2023/07/24 v0.1 Northwestern University Colors]
+    [2025/05/05 v0.1 Northwestern University Colors]
 %</package>
 %<*driver>
 \documentclass{ltxdoc}
@@ -101,7 +101,7 @@ Running "make install" installs the files in the local TeX tree.
   pdftitle={NUColors},
   pdfauthor={Raven Hallsby},
 }{hyperref}
-\usepackage[]{nucolors}[2023/07/24]
+\usepackage[secondary=true]{nucolors}[2025/05/05]
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
@@ -126,6 +126,7 @@ Running "make install" installs the files in the local TeX tree.
 %
 %\maketitle
 %
+%\changes{v0.0.2}{2026/05/09}{Add NU's approved secondary colors}
 %\changes{v0.0.1}{2026/05/09}{First public release}
 %
 % \begin{abstract}
@@ -226,6 +227,26 @@ Running "make install" installs the files in the local TeX tree.
 %   \testcolor{nublack10}
 % \end{testcolors}
 %
+% \section{Secondary Colors}
+%
+% Northwestern also defines additional ``secondary'' colors that are used for
+% highlighting, callouts, or generally providing alternative colors.
+%
+% \begin{testcolors}[rgb,cmyk,HTML]
+%   \testcolor{nubrightgreen}
+%   \testcolor{nubrightcyan}
+%   \testcolor{nubrightblue}
+%   \testcolor{nubrightyellow}
+%   \testcolor{nubrightorange}
+%   \testcolor{nubrightred}
+%   \testcolor{nudarkgreen}
+%   \testcolor{nudarkcyan}
+%   \testcolor{nudarkblue}
+%   \testcolor{nudarkyellow}
+%   \testcolor{nudarkorange}
+%   \testcolor{nudarkred}
+% \end{testcolors}
+%
 % \StopEventually{}
 %
 % \section{Implementation}
@@ -257,6 +278,9 @@ Running "make install" installs the files in the local TeX tree.
 %    \begin{macrocode}
 \DeclareComplementaryOption{print}{digital}
 \DeclareBoolOption{coated}% If print, coated or uncoated?
+
+\DeclareBoolOption{secondary}% Provide secondary color palette
+%% Default to false
 %    \end{macrocode}
 % Default to false on \texttt{coated}, because coated paper is less
 % frequently used.
@@ -345,6 +369,28 @@ Running "make install" installs the files in the local TeX tree.
 %% Alias 2 most common colors to more recognizable names.
 \colorlet{NorthwesternBlack}{nublack100}
 \colorlet{NorthwesternPurple}{nu100}
+%    \end{macrocode}
+
+%    \begin{macrocode}
+% Secondary colors are from https://www.northwestern.edu/brand/visual-identity/color-palettes/secondary-palette/
+% Secondary colors should be used for charts/graphs, or updates/callout buttons
+\ifnucolors@secondary
+  % Recall digital=RGB, print=cmyk
+  % Brights
+  \definecolor{nubrightgreen}{RGB/cmyk}{088,185,071/0.68,0.00,1.00,0.00}
+  \definecolor{nubrightcyan}{RGB}{127,206,205/0.48,0.00,0.22,0.00}
+  \definecolor{nubrightblue}{RGB/cmyk}{080,145,205/0.68,0.34,0.00,0.00}
+  \definecolor{nubrightyellow}{RGB/cmyk}{237,233,059/0.10,0.00,0.89,0.00}
+  \definecolor{nubrightorange}{RGB/cmyk}{255,197,032/0.00,0.23,0.95,0.00}
+  \definecolor{nubrightred}{RGB/cmyk}{239,085,063/0.01,0.82,0.80,0.00}
+  % Darks
+  \definecolor{nudarkgreen}{RGB/cmyk}{000,134,086/0.87,0.24,0.83,0.09}
+  \definecolor{nudarkcyan}{RGB/cmyk}{000,127,164/0.86,0.39,0.23,0.01}
+  \definecolor{nudarkblue}{RGB/cmyk}{013,045,108/1.00,0.85,0.05,0.36}
+  \definecolor{nudarkyellow}{RGB/cmyk}{217,200,038/0.18,0.14,1.00,0.00}
+  \definecolor{nudarkorange}{RGB/cmyk}{202,124,027/0.00,0.48,0.97,0.21}
+  \definecolor{nudarkred}{RGB/cmyk}{216,088,032/0.02,0.77,1.00,0.09}
+\fi
 %    \end{macrocode}
 
 %    \begin{macrocode}
