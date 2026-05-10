@@ -93,7 +93,6 @@ Running "make install" installs the files in the local TeX tree.
 %<*package>
     [2023/07/24 v0.1 Northwestern University Colors]
 %</package>
-%
 %<*driver>
 \documentclass{ltxdoc}
 \PassOptionsToPackage{a4paper,margin=25mm,left=50mm,nohead}{geometry}
@@ -150,7 +149,7 @@ Running "make install" installs the files in the local TeX tree.
 % There are RGB definitions for digital media and CMYK for high-quality print media.
 % If you use print media, you may choose if the paper is coated or not.
 % All available options are documented in Table~\ref{tab:nucolors-options}.
-
+%
 % \begin{table}[h!tbp]
 %   \centering
 %   \begin{tabular}{lcl}
@@ -168,7 +167,7 @@ Running "make install" installs the files in the local TeX tree.
 % \subsection{Available Colors}
 % \texttt{nu160} to \texttt{nu10} are available shades and tints of Northwestern Purple.
 % Northwestern Purple is \texttt{nu100} or \texttt{NorthwesternPurple}.
-%
+
 % There are also a handful of blacks and grays defined using \texttt{nublack100} to \texttt{nublack10}.
 % The default Northwestern black is \texttt{nublack100}, which is aliased to \texttt{NorthwesternBlack}.
 %
@@ -185,7 +184,7 @@ Running "make install" installs the files in the local TeX tree.
 %
 % \subsubsection{Tints (Lighter)}
 % Tints are lighter in color than Northwestern Purple (nu100).
-
+%
 % \begin{testcolors}[rgb,cmyk,HTML]
 %   \testcolor{nu90}
 %   \testcolor{nu80}
@@ -197,10 +196,10 @@ Running "make install" installs the files in the local TeX tree.
 %   \testcolor{nu20}
 %   \testcolor{nu10}
 % \end{testcolors}
-
+%
 % \subsubsection{Shades (Darker)}
 % Shades are darker in color than Northwestern Purple (nu100).
-
+%
 % \begin{testcolors}[rgb,cmyk,HTML]
 %   \testcolor{nu160}
 %   \testcolor{nu150}
@@ -234,12 +233,13 @@ Running "make install" installs the files in the local TeX tree.
 % \iffalse
 %<*package>
 % \fi
-%
 %    \begin{macrocode}
 \PackageInfo{nucolors}{Color information taken from
   https://www.northwestern.edu/brand/visual-identity/color-palettes/}
+
 \RequirePackage{kvoptions}
 %    \end{macrocode}
+
 %    \begin{macrocode}
 \RequirePackage[table,x11names]{xcolor}
 \SetupKeyvalOptions{
@@ -247,7 +247,7 @@ Running "make install" installs the files in the local TeX tree.
   prefix=nucolors@
 }
 %    \end{macrocode}
-%
+
 % Change styles depending on the type of output
 %    \begin{macrocode}
 \DeclareBoolOption[true]{digital}
@@ -260,16 +260,15 @@ Running "make install" installs the files in the local TeX tree.
 %    \end{macrocode}
 % Default to false on \texttt{coated}, because coated paper is less
 % frequently used.
-%
+
 %    \begin{macrocode}
 \ProcessKeyvalOptions*
 %    \end{macrocode}
+
 % \subsection{Digital Media}
 %    \begin{macrocode}
+%% Purple, shades and tints for digital media (RGB)
 \ifnucolors@digital
-%    \end{macrocode}
-% Purple, shades and tints for digital media (RGB)
-%    \begin{macrocode}
   \definecolor{nu160}{RGB}{029,002,053}
   \definecolor{nu150}{RGB}{038,008,065}
   \definecolor{nu140}{RGB}{048,016,078}
@@ -383,7 +382,7 @@ Running "make install" installs the files in the local TeX tree.
 \colorlet{NorthwesternBlack}{nublack100}
 \colorlet{NorthwesternPurple}{nu100}
 %    \end{macrocode}
-%
+
 %    \begin{macrocode}
 \endinput
 %</package>
