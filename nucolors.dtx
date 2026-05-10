@@ -265,120 +265,84 @@ Running "make install" installs the files in the local TeX tree.
 \ProcessKeyvalOptions*
 %    \end{macrocode}
 
-% \subsection{Digital Media}
+%
 %    \begin{macrocode}
-%% Purple, shades and tints for digital media (RGB)
+%% If the user only provides coated, switch to print output
+\ifnucolors@coated
+  \nucolors@printtrue
+\fi
+
+%% Change the color mode throughout xcolor
+%% This also doubles to change the color definitions for our colors below
 \ifnucolors@digital
-  \definecolor{nu160}{RGB}{029,002,053}
-  \definecolor{nu150}{RGB}{038,008,065}
-  \definecolor{nu140}{RGB}{048,016,078}
-  \definecolor{nu130}{RGB}{056,023,090}
-  \definecolor{nu120}{RGB}{064,031,104}
-  \definecolor{nu110}{RGB}{072,036,118}
-  \definecolor{nu100}{RGB}{078,042,132} % The "Northwestern Purple"
-  \definecolor{nu90} {RGB}{091,059,140}
-  \definecolor{nu80} {RGB}{104,076,150}
-  \definecolor{nu70} {RGB}{118,093,160}
-  \definecolor{nu60} {RGB}{131,110,170}
-  \definecolor{nu50} {RGB}{147,128,182}
-  \definecolor{nu40} {RGB}{164,149,195}
-  \definecolor{nu30} {RGB}{182,172,209}
-  \definecolor{nu20} {RGB}{204,196,223}
-  \definecolor{nu10} {RGB}{228,224,238}
-%    \end{macrocode}
-%
-% Blacks and grays for digital media
-%    \begin{macrocode}
-  \definecolor{nublack100}{RGB}{000,000,000}
-  \definecolor{nublack90}{RGB}{255,255,255}
-  \definecolor{nublack80}{HTML}{342f2e}
-  \definecolor{nublack70}{RGB}{255,255,255}
-  \definecolor{nublack60}{RGB}{255,255,255}
-  \definecolor{nublack50}{HTML}{716c6b}
-  \definecolor{nublack40}{RGB}{255,255,255}
-  \definecolor{nublack30}{RGB}{255,255,255}
-  \definecolor{nublack20}{HTML}{bbb8b8}
-  \definecolor{nublack10}{HTML}{d8d6d6}
-\else% Print output
-%    \end{macrocode}
-%
-% \subsection{Print Media}
-% \subsubsection{Coated Print}
-%    \begin{macrocode}
-  \ifnucolors@coated
-%    \end{macrocode}
-% Purple, shades and tints for \textbf{coated} print media, using CMYK
-%    \begin{macrocode}
-    \definecolor{nu160}{cmyk}{0.88,1.00,0.30,0.62}
-    \definecolor{nu150}{cmyk}{0.87,1.00,0.25,0.54}
-    \definecolor{nu140}{cmyk}{0.87,1.00,0.20,0.46}
-    \definecolor{nu130}{cmyk}{0.85,1.00,0.15,0.28}
-    \definecolor{nu120}{cmyk}{0.85,1.00,0.10,0.30}
-    \definecolor{nu110}{cmyk}{0.85,1.00,0.05,0.22}
-    \definecolor{nu100}{cmyk}{0.85,1.00,0,0.15} % The "Northwestern Purple"
-    \definecolor{nu90} {cmyk}{0.79,0.86,0,0.11}
-    \definecolor{nu80} {cmyk}{0.68,0.7,0,0.10}
-    \definecolor{nu70} {cmyk}{0.58,0.62,0,0.07}
-    \definecolor{nu60} {cmyk}{0.47,0.50,0,0.06}
-    \definecolor{nu50} {cmyk}{0.38,0.40,0,0.05}
-    \definecolor{nu40} {cmyk}{0.33,0.34,0,0.02}
-    \definecolor{nu30} {cmyk}{0.26,0.26,0,0}
-    \definecolor{nu20} {cmyk}{0.18,0.18,0,0}
-    \definecolor{nu10} {cmyk}{0.09,0.09,0,0}
-%    \end{macrocode}
-% Blacks and grays for \textbf{coated} print media
-%    \begin{macrocode}
-    \definecolor{nublack100}{cmyk}{0.50,0.50,0.50,1.00}
-    \definecolor{nublack90}{cmyk}{0,0,0,0}
-    \definecolor{nublack80}{HTML}{342f2e}
-    \definecolor{nublack70}{cmyk}{0,0,0,0}
-    \definecolor{nublack60}{cmyk}{0,0,0,0}
-    \definecolor{nublack50}{HTML}{716c6b}
-    \definecolor{nublack40}{cmyk}{0,0,0,0}
-    \definecolor{nublack30}{cmyk}{0,0,0,0}
-    \definecolor{nublack20}{HTML}{bbb8b8}
-    \definecolor{nublack10}{HTML}{d8d6d6}
-  \else% Uncoated print output
-%    \end{macrocode}
-%
-% \subsubsection{Uncoated Print}
-% Purple, shades and tints for \textbf{uncoated} print media, using CMYK
-%    \begin{macrocode}
-    \definecolor{nu160}{cmyk}{0.84,1.00,0.30,0.60}
-    \definecolor{nu150}{cmyk}{0.84,1.00,0.25,0.50}
-    \definecolor{nu140}{cmyk}{0.87,0.90,0.20,0.48}
-    \definecolor{nu130}{cmyk}{0.87,0.90,0.15,0.39}
-    \definecolor{nu120}{cmyk}{0.87,0.90,0.10,0.30}
-    \definecolor{nu110}{cmyk}{0.87,0.90,0.05,0.21}
-    \definecolor{nu100}{cmyk}{0.87,0.90,0,0.12} % The "Northwestern Purple"
-    \definecolor{nu90} {cmyk}{0.79,0.88,0,0}
-    \definecolor{nu80} {cmyk}{0.71,0.75,0,0}
-    \definecolor{nu70} {cmyk}{0.61,0.67,0,0}
-    \definecolor{nu60} {cmyk}{0.54,0.54,0,0.70}
-    \definecolor{nu50} {cmyk}{0.45,0.47,0,0}
-    \definecolor{nu40} {cmyk}{0.36,0.36,0,0.05}
-    \definecolor{nu30} {cmyk}{0.26,0.26,0,0.04}
-    \definecolor{nu20} {cmyk}{0.17,0.17,0,0.02}
-    \definecolor{nu10} {cmyk}{0.10,0.08,0,0.02}
-%    \end{macrocode}
-% Blacks and grays for \textbf{uncoated} print media
-%    \begin{macrocode}
-    \definecolor{nublack100}{cmyk}{0.50,0.50,0.50,1.00}
-    \definecolor{nublack90}{cmyk}{0,0,0,0}
-    \definecolor{nublack80}{HTML}{342f2e}
-    \definecolor{nublack70}{cmyk}{0,0,0,0}
-    \definecolor{nublack60}{cmyk}{0,0,0,0}
-    \definecolor{nublack50}{HTML}{716c6b}
-    \definecolor{nublack40}{cmyk}{0,0,0,0}
-    \definecolor{nublack30}{cmyk}{0,0,0,0}
-    \definecolor{nublack20}{HTML}{bbb8b8}
-    \definecolor{nublack10}{HTML}{d8d6d6}
-  \fi
+  \selectcolormodel{rgb}
+\else% Print media
+  \selectcolormodel{cmyk}
 \fi
 %    \end{macrocode}
-%
+
+% \subsection{Digital Media}
+%    \begin{macrocode}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                Main colors                    %%
+%% digital=RGB, print=cmyk. HTML used otherwise. %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Purple, shades and tints
+\definecolor{nu160}{RGB/cmyk}{029,002,053/0.84,1.00,0.30,0.60}
+\definecolor{nu150}{RGB/cmyk}{038,008,065/0.84,1.00,0.25,0.50}
+\definecolor{nu140}{RGB/cmyk}{048,016,078/0.87,0.90,0.20,0.48}
+\definecolor{nu130}{RGB/cmyk}{056,023,090/0.87,0.90,0.15,0.39}
+\definecolor{nu120}{RGB/cmyk}{064,031,104/0.87,0.90,0.10,0.30}
+\definecolor{nu110}{RGB/cmyk}{072,036,118/0.87,0.90,0.05,0.21}
+\definecolor{nu100}{RGB/cmyk}{078,042,132/0.87,0.90,0.00,0.12} % Northwestern Purple
+\definecolor{nu90} {RGB/cmyk}{091,059,140/0.79,0.88,0.00,0.00}
+\definecolor{nu80} {RGB/cmyk}{104,076,150/0.71,0.75,0.00,0.00}
+\definecolor{nu70} {RGB/cmyk}{118,093,160/0.61,0.67,0.00,0.00}
+\definecolor{nu60} {RGB/cmyk}{131,110,170/0.54,0.54,0.00,0.07}
+\definecolor{nu50} {RGB/cmyk}{147,128,182/0.45,0.47,0.00,0.00}
+\definecolor{nu40} {RGB/cmyk}{164,149,195/0.36,0.36,0.00,0.05}
+\definecolor{nu30} {RGB/cmyk}{182,172,209/0.26,0.26,0.00,0.04}
+\definecolor{nu20} {RGB/cmyk}{204,196,223/0.17,0.17,0.00,0.02}
+\definecolor{nu10} {RGB/cmyk}{228,224,238/0.10,0.08,0.00,0.02}
+%% Blacks and grays
+\definecolor{nublack100}{RGB/cmyk}{000,000,000/0.50,0.50,0.50,1.00}
+\definecolor{nublack90} {RGB/cmyk}{255,255,255/0.00,0.00,0.00,0.00}
+\definecolor{nublack80} {HTML}{342f2e}
+\definecolor{nublack70} {RGB/cmyk}{255,255,255/0.00,0.00,0.00,0.00}
+\definecolor{nublack60} {RGB/cmyk}{255,255,255/0.00,0.00,0.00,0.00}
+\definecolor{nublack50} {HTML}{716c6b}
+\definecolor{nublack40} {RGB/cmyk}{255,255,255/0.00,0.00,0.00,0.00}
+\definecolor{nublack30} {RGB/cmyk}{255,255,255/0.00,0.00,0.00,0.00}
+\definecolor{nublack20} {HTML}{bbb8b8}
+\definecolor{nublack10} {HTML}{d8d6d6}
+
+% \subsection{Coated Print}
+% Purple, shades and tints for \textbf{coated} print media, using CMYK
+%    \begin{macrocode}
+\ifnucolors@coated%Coated card stock. Change cmyk colors slighly
+  % Purple, shades and tints
+  \definecolor{nu160}{cmyk}{0.88,1.00,0.30,0.62}
+  \definecolor{nu150}{cmyk}{0.87,1.00,0.25,0.54}
+  \definecolor{nu140}{cmyk}{0.86,1.00,0.20,0.46}
+  \definecolor{nu130}{cmyk}{0.85,1.00,0.15,0.38}
+  \definecolor{nu120}{cmyk}{0.85,1.00,0.10,0.30}
+  \definecolor{nu110}{cmyk}{0.85,1.00,0.05,0.22}
+  \definecolor{nu100}{cmyk}{0.85,1.00,0,0.15} % The "Northwestern Purple"
+  \definecolor{nu90} {cmyk}{0.79,0.86,0,0.11}
+  \definecolor{nu80} {cmyk}{0.68,0.72,0,0.10}
+  \definecolor{nu70} {cmyk}{0.58,0.62,0,0.07}
+  \definecolor{nu60} {cmyk}{0.47,0.50,0,0.06}
+  \definecolor{nu50} {cmyk}{0.38,0.40,0,0.05}
+  \definecolor{nu40} {cmyk}{0.33,0.34,0,0.02}
+  \definecolor{nu30} {cmyk}{0.26,0.26,0,0}
+  \definecolor{nu20} {cmyk}{0.18,0.18,0,0}
+  \definecolor{nu10} {cmyk}{0.09,0.09,0,0}
+\fi
+%    \end{macrocode}
+
 % \subsection{Color Aliases}
 %    \begin{macrocode}
+%% Alias 2 most common colors to more recognizable names.
 \colorlet{NorthwesternBlack}{nublack100}
 \colorlet{NorthwesternPurple}{nu100}
 %    \end{macrocode}
